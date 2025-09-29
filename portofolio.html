@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agung Wahyu - Linktree</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #0a0a1a;
+            --accent-color: #666666;
+            --light-color: #999999;
+            --very-light-color: #CCCCCC;
+            --bg-color: #000814;
+            --card-bg: rgba(10, 10, 26, 0.7);
+            --text-color: #FFFFFF;
+            --secondary-text: #CCCCCC;
+            --border-color: #1e3a8a;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            --comet-color-1: #00d9ff;
+            --comet-color-2: #7b2ff7;
+            --comet-color-3: #ff006e;
+            --comet-color-4: #00f5ff;
+            --comet-color-5: #ffbe0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(123, 47, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.05) 0%, transparent 50%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Comet Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        .comet {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+            animation: fall linear infinite;
+        }
+
+        .comet::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8));
+            border-radius: 999px;
+        }
+
+        .comet::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.4));
+            border-radius: 999px;
+            left: 50px;
+        }
+
+        .comet-1 {
+            top: -100px;
+            left: 10%;
+            animation-duration: 5s;
+            animation-delay: 0s;
+        }
+
+        .comet-1::before {
+            background: linear-gradient(to left, transparent, var(--comet-color-1));
+        }
+
+        .comet-1::after {
+            background: linear-gradient(to left, transparent, var(--comet-color-1));
+        }
+
+        .comet-2 {
+            top: -100px;
+            left: 30%;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        .comet-2::before {
+            background: linear-gradient(to left, transparent, var(--comet-color-2));
+        }
+
+        .comet-2::after {
+            background: linear-gradient(to left, transparent, var(--comet-color-2));
+        }
+
+        .comet-3 {
+            top: -100px;
+            left: 50%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        .comet-3::before {
+            background: linear-gradient(to left, transparent, var(--comet-color-3));
+        }
+
+        .comet-3::after {
+            background: linear-gradient(to left, transparent, var(--comet-color-3));
+        }
+
+        .comet-4 {
+            top: -100px;
+            left: 70%;
+            animation-duration: 8s;
+            animation-delay: 3s;
+        }
+
+        .comet-4::before {
+            background: linear-gradient(to left, transparent, var(--comet-color-4));
+        }
+
+        .comet-4::after {
+            background: linear-gradient(to left, transparent, var(--comet-color-4));
+        }
+
+        .comet-5 {
+            top: -100px;
+            left: 90%;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+        .comet-5::before {
+            background: linear-gradient(to left, transparent, var(--comet-color-5));
+        }
+
+        .comet-5::after {
+            background: linear-gradient(to left, transparent, var(--comet-color-5));
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(calc(100vh + 100px));
+            }
+        }
+
+        /* Loading Screen */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 10px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--text-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--text-color);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            margin: 0 auto 20px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid var(--text-color);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+        }
+
+        .profile-bio {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 5px;
+        }
+
+        .profile-location {
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Link Cards */
+        .link-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .link-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        /* Link Card Variants */
+        .link-card-1::before {
+            background: var(--gradient-1);
+        }
+
+        .link-card-2::before {
+            background: var(--gradient-2);
+        }
+
+        .link-card-3::before {
+            background: var(--gradient-3);
+        }
+
+        .link-card-4::before {
+            background: var(--gradient-4);
+        }
+
+        .link-card-5::before {
+            background: var(--gradient-5);
+        }
+
+        .link-card-6::before {
+            background: var(--gradient-6);
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .link-card-1 .link-icon {
+            background: var(--gradient-1);
+        }
+
+        .link-card-2 .link-icon {
+            background: var(--gradient-2);
+        }
+
+        .link-card-3 .link-icon {
+            background: var(--gradient-3);
+        }
+
+        .link-card-4 .link-icon {
+            background: var(--gradient-4);
+        }
+
+        .link-card-5 .link-icon {
+            background: var(--gradient-5);
+        }
+
+        .link-card-6 .link-icon {
+            background: var(--gradient-6);
+        }
+
+        .link-text {
+            flex: 1;
+        }
+
+        .link-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .link-subtitle {
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+        }
+
+        .link-arrow {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .link-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 25px;
+            position: relative;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: var(--text-color);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-left: 15px;
+            color: var(--text-color);
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .profile-name {
+                font-size: 1.8rem;
+            }
+
+            .profile-bio {
+                font-size: 1rem;
+            }
+
+            .link-card {
+                padding: 16px 20px;
+            }
+
+            .link-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+                margin-right: 14px;
+            }
+
+            .link-title {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Comet Background -->
+    <div class="stars">
+        <div class="comet comet-1"></div>
+        <div class="comet comet-2"></div>
+        <div class="comet comet-3"></div>
+        <div class="comet comet-4"></div>
+        <div class="comet comet-5"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section" data-aos="fade-down">
+            <div class="profile-img">
+                <img src="profile.JPG" alt="Agung Wahyu">
+            </div>
+            <h1 class="profile-name">Agung Wahyu</h1>
+            <p class="profile-bio">Frontend Developer | IT Support</p>
+            <div class="profile-location">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Bali, Indonesia</span>
+            </div>
+        </div>
+        <!-- Main Links -->
+
+
+        <!-- Portfolio Section -->
+        <div class="section-header" data-aos="fade-right">
+            <h2 class="section-title">Portfolio</h2>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <a href="https://github.com/agungwahyu14" target="_blank" class="link-card link-card-1">
+                <div class="link-content">
+                    <div class="link-icon">
+                        <i class="bi bi-github"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">GitHub</div>
+                        <div class="link-subtitle">Lihat semua proyek saya</div>
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-up-right link-arrow"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/agung-wahyu-537a0226b" target="_blank" class="link-card link-card-2">
+                <div class="link-content">
+                    <div class="link-icon">
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">LinkedIn</div>
+                        <div class="link-subtitle">Koneksi profesional</div>
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-up-right link-arrow"></i>
+            </a>
+
+
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section-header" data-aos="fade-right">
+            <h2 class="section-title">Kontak</h2>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="300">
+            <a href="mailto:wahyubrahmantha05@gmail.com" class="link-card link-card-1">
+                <div class="link-content">
+                    <div class="link-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Email</div>
+                        <div class="link-subtitle">wahyubrahmantha05@gmail.com</div>
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-up-right link-arrow"></i>
+            </a>
+
+            <a href="https://wa.me/6281239261344" target="_blank" class="link-card link-card-2">
+                <div class="link-content">
+                    <div class="link-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">WhatsApp</div>
+                        <div class="link-subtitle">081239261344</div>
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-up-right link-arrow"></i>
+            </a>
+
+            <a href="https://instagram.com/aagungwwahyu" target="_blank" class="link-card link-card-3">
+                <div class="link-content">
+                    <div class="link-icon">
+                        <i class="bi bi-instagram"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Instagram</div>
+                        <div class="link-subtitle">Follow my journey</div>
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-up-right link-arrow"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@aaggungwwahyu" target="_blank" class="link-card link-card-3">
+                <div class="link-content">
+                    <div class="link-icon">
+                        <i class="bi bi-tiktok"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Tiktok</div>
+                        <div class="link-subtitle">Follow my journey</div>
+                    </div>
+                </div>
+                <i class="bi bi-box-arrow-up-right link-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Social Icons -->
+
+
+        <!-- Footer -->
+        <div class="footer" data-aos="fade-up" data-aos-delay="500">
+            <p>&copy; 2023 Agung Wahyu. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Loading Screen
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.querySelector('.loader-wrapper').style.opacity = '0';
+                setTimeout(function () {
+                    document.querySelector('.loader-wrapper').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Add click animation to link cards
+        const linkCards = document.querySelectorAll('.link-card');
+
+        linkCards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Generate random stars
+        function generateStars() {
+            const starsContainer = document.querySelector('.stars');
+            const numberOfStars = 100;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+
+                // Random size
+                const size = Math.random() * 3;
+
+                // Random opacity
+                const opacity = Math.random() * 0.8 + 0.2;
+
+                // Random animation delay
+                const delay = Math.random() * 5;
+
+                star.style.left = `${left}%`;
+                star.style.top = `${top}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.opacity = opacity;
+                star.style.animationDelay = `${delay}s`;
+
+                starsContainer.appendChild(star);
+            }
+        }
+
+        generateStars();
+    </script>
+
+    <style>
+        /* Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .link-card {
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</body>
+
+</html>
